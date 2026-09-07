@@ -7,7 +7,7 @@ env:
   IMAGE_NAME: spring-boot-app
 jobs:
   build-deploy:
-    runs-on: Amazon Linux 2
+    runs-on: [self-hosted, amazon-linux-2023]
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
