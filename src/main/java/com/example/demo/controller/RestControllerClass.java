@@ -1,17 +1,19 @@
 package com.example.demo.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/welcome")
 public record RestControllerClass() {
 
-    @GetMapping
+    @GetMapping("/api/welcome")
     public ResponseEntity<String> welcome() {
         return ResponseEntity.ok("Welcome to the Spring Boot REST API!");
+    }
+
+    @GetMapping("/api/welcome/{name}")
+    public ResponseEntity<String> welcomeWithName(String name) {
+        return ResponseEntity.ok("Welcome to the Spring Boot REST API, " + name + "!");
     }
 }
