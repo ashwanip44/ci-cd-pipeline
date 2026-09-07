@@ -12,6 +12,7 @@ public record RestControllerClass() {
         return ResponseEntity.ok("Welcome to the Spring Boot REST API!");
     }
 
+
     @GetMapping("/api/welcome/{name}")
     public ResponseEntity<String> welcomeWithName(String name) {
         return ResponseEntity.ok("Welcome to the Spring Boot REST API, " + name + "!");
